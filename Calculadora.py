@@ -5,7 +5,9 @@ class Calculadora:
         suma = 0
         if cadena=="":
             return 0
-        elif "," in cadena:
+        elif "," in cadena or "&" in cadena or ":" in cadena:
+            cadena = cadena.replace("&",",")
+            cadena = cadena.replace(":", ",")
             numeros = cadena.split(",")
             print suma
             for num in numeros:
